@@ -47,6 +47,7 @@ class Login {
 $logar = new Login("teste@teste.com", "123456", "Maycon R Campos");
 $logar2 = new Login("maycon@gmail.com", "otasenha", "Usuario de teste");
 
+
 $logar->ExibirUsuario();
 $logar->Logar();
 
