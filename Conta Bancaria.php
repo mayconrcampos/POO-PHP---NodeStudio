@@ -8,6 +8,8 @@ class Conta {
     private $saldo = 0;
     private $limite;
 
+    private $extrato = array();
+
     public function __construct($banco, $nomeCliente, $ag, $cc, $limite){
         $this->setConta($banco, $nomeCliente, $ag, $cc, $limite);
     }
@@ -35,6 +37,10 @@ class Conta {
 
     public function depositar($valor){
         $this->saldo += $valor;
+        $this->extrato[] = array(
+            "DEP   (+)" => $valor,
+            "SALDO(R$)" => $this->saldo
+        );
         echo "Depósito (R$) : ".number_format($valor, 2, ",", ".")."\n\n";
 
         $this->mostraConta();
@@ -44,11 +50,29 @@ class Conta {
         $meuLimite = -$this->limite;
         if($this->saldo > $meuLimite){
             $this->saldo -= $valor;
+            $this->extrato[] = array(
+                "SAQ   (-)" => $valor,
+                "SALDO(R$)" => $this->saldo
+            );
             echo "Saque (R$)  : ".number_format($valor, 2, ",", ".")."\n\n";
+            
         }else{
             echo "Saldo Insuficiente.\n\n";
         }
         $this->mostraConta();
+    }
+
+    public function extratoConta(){       
+
+        echo "Extrato Bancário\n";
+        foreach($this->extrato as $chave => $valor){
+            foreach($valor as $tipo => $v){
+                echo "".$tipo."                            ".number_format($v, 2, ",", ".")."\n";
+                echo "_____________________________________________\n";
+            }
+        }
+        echo "Total em Conta (R$)                ".number_format($this->saldo, 2, ",", ".")."\n";
+        echo "Limite (R$)                        ".number_format($this->limite, 2, ",", ".");
     }
 }
 
@@ -60,3 +84,4 @@ $minhaConta->sacar(2200);
 $minhaConta->sacar(400);
 $minhaConta->sacar(1);
 $minhaConta->depositar(7850);
+$minhaConta->extratoConta();
