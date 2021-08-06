@@ -18,7 +18,6 @@ class Produtos {
 class Carrinho {
     public $produtos = array();
 
-
     public function adiciona(Produtos $produto){
         $this->produtos[] = $produto;
     }
