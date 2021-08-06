@@ -20,8 +20,11 @@ class NewsLetter{
 
 $newsletter = new NewsLetter();
 
+
+
+
 try {
-    $newsletter->cadastrarEmail("maycon@@gmail.com");
+    $newsletter->cadastrarEmail("maycon@gmail.com");
 
 
 }catch(Exception $e) {
@@ -30,5 +33,6 @@ try {
     echo "ERRO Linha                ". $e->getLine()."\n";
     echo "ERRO Arquivo              ". $e->getFile()."\n";
 }
+
 
 // Desta forma, temos informações suficientes para quando ocorrer o erro, a aplicação não pare de rodar e também possamos capturar as mensagens de erro para corrigir o código.

@@ -47,8 +47,8 @@ class Conta {
     }
 
     public function sacar($valor){
-        $meuLimite = -$this->limite;
-        if($this->saldo > $meuLimite){
+        $meuSaque = $this->saldo - $valor;
+        if($meuSaque >= -$this->limite){
             $this->saldo -= $valor;
             $this->extrato[] = array(
                 "SAQ   (-)" => $valor,
@@ -58,6 +58,7 @@ class Conta {
             
         }else{
             echo "Saldo Insuficiente.\n\n";
+
         }
         $this->mostraConta();
     }
@@ -78,10 +79,7 @@ class Conta {
 
 $minhaConta = new Conta("INTER SA", "Maycon R Campos", "0001-9", "1023255-9", 500);
 $minhaConta->depositar(1000);
-$minhaConta->depositar(1500);
-$minhaConta->sacar(400);
-$minhaConta->sacar(2200);
-$minhaConta->sacar(400);
-$minhaConta->sacar(1);
-$minhaConta->depositar(7850);
+$minhaConta->sacar(2000);
+$minhaConta->depositar(3450);
+$minhaConta->sacar(4949);
 $minhaConta->extratoConta();
