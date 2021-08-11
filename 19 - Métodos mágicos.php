@@ -55,5 +55,3 @@ echo $pessoa("Otamolier"); // Objeto se comportando como função através do in
 
  echo $pessoa;
 
-
-
