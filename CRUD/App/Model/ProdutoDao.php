@@ -8,18 +8,18 @@ class ProdutoDao {
 
         $sql = "INSERT INTO produtos (nome, descricao) VALUES (?, ?)";
 
-        $stmt = Conexao::getConn()->prepare($sql);
+        $stmt = \App\Model\Conexao::getConn()->prepare($sql);
         $stmt->bindValue(1, $p->getNome());
         $stmt->bindValue(2, $p->getDescricao());
 
         $stmt->execute();
     }
     
-    public function read(){
+    public function select(){
 
     }
 
-    public function update(Produto $produto){
+    public function update(Produto $p){
 
     }
 
