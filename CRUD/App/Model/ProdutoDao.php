@@ -6,9 +6,9 @@ class ProdutoDao {
 
     public function insert(Produto $p){
 
-        $sql = "INSERT INTO produtos (nome, descricao) VALUES (?, ?)";
+        $query = "INSERT INTO produtos (nome, descricao) VALUES (?, ?)";
 
-        $stmt = \App\Model\Conexao::getConn()->prepare($sql);
+        $stmt = \App\Model\Conexao::getConn()->prepare($query);
         $stmt->bindValue(1, $p->getNome());
         $stmt->bindValue(2, $p->getDescricao());
 

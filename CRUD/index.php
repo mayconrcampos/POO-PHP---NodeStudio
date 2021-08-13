@@ -8,9 +8,5 @@
     $insere = new \App\Model\ProdutoDao();
     $insere->insert($produto);
 
-    //echo "ok";
-
-
-?>
 
 
