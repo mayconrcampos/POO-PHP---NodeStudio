@@ -14,16 +14,13 @@ class Conexao {
         // Método que verifica se há uma instância da conexão. Se existir ele retorna a instância. $this->instance;
 
         try{
-            if(!isset(self::$instance)){
-                self::$instance = new \PDO("mysql:dbname=pdo;host=localhost", "root", "5DaJ10.,Xw,8");
-                self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            }
-
+            self::$instance = new \PDO("mysql:dbname=pdo;host=localhost", "root", "5DaJ10.,Xw,8");
+            self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        
             return self::$instance;
         
-
         }catch(PDOException $e){
-            echo "ERRO: ".$e->getMessage();
+            die("ERRO: ".$e->getMessage());
         }
         
     }

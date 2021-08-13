@@ -4,17 +4,17 @@ namespace App\Model;
 
 class ProdutoDao {
 
-    public function insert(Produto $produto){
+    public function insert(Produto $p){
 
         $sql = "INSERT INTO produtos (nome, descricao) VALUES (?, ?)";
 
         $stmt = Conexao::getConn()->prepare($sql);
-        $stmt->bindValue(1, $produto->getNome());
-        $stmt->bindValue(2, $produto->getDescricao());
+        $stmt->bindValue(1, $p->getNome());
+        $stmt->bindValue(2, $p->getDescricao());
 
         $stmt->execute();
     }
-
+    
     public function read(){
 
     }

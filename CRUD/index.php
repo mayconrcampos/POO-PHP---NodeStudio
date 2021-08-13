@@ -5,9 +5,8 @@
     $produto->setNome("Notebook Dell");
     $produto->setDescricao("Core i5 8GB RAM 500GB SSD");
 
-
-    $produtoDao = new \App\Model\ProdutoDao();
-    $produtoDao->insert($produto);
+    $insere = new \App\Model\ProdutoDao();
+    $insere->insert($produto);
 
     //echo "ok";
 
