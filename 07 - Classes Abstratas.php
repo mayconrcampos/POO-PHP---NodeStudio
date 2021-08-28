@@ -15,7 +15,7 @@
     abstract protected function setAttrs($nome_cliente, $contaCorrente, $saldo, $limite);
  }
 
- class BancoInter extends Banco{
+ final class BancoInter extends Banco{
     public function __construct($nome_cliente, $contaCorrente, $saldo, $limite){
         $this->setAttrs($nome_cliente, $contaCorrente, $saldo, $limite);
      }

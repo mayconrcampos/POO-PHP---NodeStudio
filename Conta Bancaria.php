@@ -77,9 +77,11 @@ class Conta {
     }
 }
 
-$minhaConta = new Conta("INTER SA", "Maycon R Campos", "0001-9", "1023255-9", 500);
-$minhaConta->depositar(1000);
-$minhaConta->sacar(2000);
-$minhaConta->depositar(3450);
-$minhaConta->sacar(4949);
-$minhaConta->extratoConta();
+//$minhaConta = new Conta("INTER SA", "Maycon R Campos", "0001-9", "1023255-9", 500);
+//$minhaConta->depositar(1000);
+//$minhaConta->sacar(2000);
+//$minhaConta->depositar(3450);
+//$minhaConta->sacar(4949);
+//$minhaConta->extratoConta();
+
+

@@ -17,9 +17,9 @@ use Carro as GlobalCarro;
  */
 
 class Veiculo{
-    private $modelo;
-    private $cor;
-    private $ano;
+    protected $modelo;
+    protected $cor;
+    protected $ano;
 
     public function setAttrs($mod, $cor, $ano){
         $this->modelo = $mod;
@@ -62,13 +62,28 @@ class Moto extends Veiculo {
 }
 
 // Quando ocultamos os atributos de uma classe, ela só pode ser setada utilizando um método set, e do mesmo modo, podemos ver seus valores utilizando o método get.
-$carro = new Veiculo();
-$carro->setAttrs("Gol", "branco", "1990");
+$carro = new Carro();
+$carro->setAttrs("Palio", "branco", 1997);
 $carro->getAttrs();
-var_dump($carro);
 
-$carro2 = new Carro();
-$carro2->setAttrs("Goleira", "Azul", "1995");
-$carro2->getAttrs();
-$carro2->num_portas = 2;
-var_dump($carro2);
+
+
+
+
+
+
+
+//$carro->setAttrs("Gol", "branco", "1990");
+
+//$carro->getAttrs();
+
+
+
+
+//var_dump($carro);
+
+//$carro2 = new Carro();
+//$carro2->setAttrs("Goleira", "Azul", "1995");
+//$carro2->getAttrs();
+//$carro2->num_portas = 2;
+//var_dump($carro2);
